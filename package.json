@@ -1,0 +1,28 @@
+{
+	"name": "cli-meow-help",
+	"version": "0.0.1",
+	"description": "Generate automatically formatted help text for &#x27;meow&#x27; CLI helper",
+	"license": "MIT",
+	"repository": "ahmadawais/cli-meow-help",
+	"author": {
+		"name": "Ahmad Awais",
+		"email": "me@AhmadAwais.com",
+		"url": "https://twitter.com/MrAhmadAwais"
+	},
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"cli-meow-help",
+		"Ahmad Awais",
+		"ahmadawais"
+	],
+	"devDependencies": {
+		"prettier": "^2.0.2"
+	},
+	"scripts": {
+		"test": "node test.js",
+		"format": "prettier --write \"./**/*.{js,json}\""
+	}
+}
