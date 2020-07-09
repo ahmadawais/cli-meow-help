@@ -154,6 +154,7 @@ Optionally, add additional footer information.
 ## License & Conduct
 
 - MIT © [Ahmad Awais](https://twitter.com/MrAhmadAwais/)
+- Thanks to Maarten Brakkee for initial implementation
 - [Code of Conduct](code-of-conduct.md)
 
 <br>
