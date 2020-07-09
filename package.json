@@ -1,7 +1,7 @@
 {
 	"name": "cli-meow-help",
 	"version": "0.0.1",
-	"description": "Generate automatically formatted help text for &#x27;meow&#x27; CLI helper",
+	"description": "Generate automatically formatted help text for `meow` CLI helper",
 	"license": "MIT",
 	"repository": "ahmadawais/cli-meow-help",
 	"author": {
@@ -11,6 +11,7 @@
 	},
 	"main": "index.js",
 	"files": [
+		"utils",
 		"index.js"
 	],
 	"keywords": [
@@ -24,5 +25,8 @@
 	"scripts": {
 		"test": "node test.js",
 		"format": "prettier --write \"./**/*.{js,json}\""
+	},
+	"dependencies": {
+		"read-pkg-up": "^7.0.1"
 	}
 }
