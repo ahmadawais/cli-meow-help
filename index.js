@@ -33,11 +33,11 @@ module.exports = ({
 	}
 
 	if (desc) {
-		help += `${desc}`;
+		help += `${desc}${spacer}`;
 	}
 
 	// Usage.
-	help += `\n\n${greenInverse(` USAGE `)} ${spacer}`;
+	help += `${greenInverse(` USAGE `)} ${spacer}`;
 	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
 
 	// Commands.

@@ -1,57 +1,22 @@
 const meowHelp = require('.');
 
 const commands = {
-	help: {
-		desc: `Print the help info`
-	}
+	new: {desc: `Creates a new user account`},
+	duplicate: {desc: `Duplicates a user account`}
 };
 
 const flags = {
-	minimal: {
+	random: {
+		desc: `Prints random data`,
 		type: 'boolean',
-		alias: 'm',
-		desc: `Qui consectetur blanditiis labore dolor.`
-	},
-	clear: {
-		type: 'boolean',
-		default: true,
-		desc: `Maiores quis amet nisi.`
-	},
-	bio: {
-		type: 'boolean',
-		default: true,
-		desc: `Prints bio`
-	},
-	social: {
-		type: 'boolean',
-		default: true,
-		desc: `Display social media links`
-	},
-	ad: {
-		type: 'boolean',
-		default: true,
-		desc: `Display an ad`
-	},
-	debug: {
-		type: 'boolean',
-		default: false,
-		alias: 'd',
-		desc: `Fugit quis commodi voluptatibus dolor`
-	},
-	version: {
-		type: 'boolean',
-		default: false,
-		alias: 'v',
-		desc: `Ut sit natus ipsa rerum est sed.`
+		default: true
 	}
 };
+
 const helpText = meowHelp({
-	name: `cli`,
-	desc: `This is a CLI that does this and that.`,
+	name: `cli-command`,
 	flags,
-	commands,
-	header: `This is a header`,
-	footer: `This is a footer`
+	commands
 });
 
 console.clear();

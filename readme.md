@@ -22,7 +22,32 @@ npm install cli-meow-help
 ## Usage
 
 ```js
-const cliMeowHelp = require('cli-meow-help');
+const meow = require('meow');
+const meowHelp = require('cli-meow-help');
+
+const commands = {
+	new: {desc: `Creates a new user account`},
+	duplicate: {desc: `Duplicates a user account`}
+};
+
+const flags = {
+	random: {
+		desc: `Prints random data`,
+		type: 'boolean',
+		default: true
+	}
+};
+
+const helpText = meowHelp({
+	name: `cli-command`,
+	flags,
+	commands
+});
+
+meow(helpText, {flags});
+
+// Now run `cli-command --help` to view the
+// following auto formatted & generated help info.
 ```
 
 <br>
