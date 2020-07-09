@@ -66,7 +66,7 @@ meow(helpText, {flags});
 
 Type: `object`
 
-Default:
+Default: ↓
 
 ```js
 {
