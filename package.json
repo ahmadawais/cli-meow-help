@@ -1,6 +1,6 @@
 {
 	"name": "cli-meow-help",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Generate automatically formatted help text for `meow` CLI helper",
 	"license": "MIT",
 	"repository": "ahmadawais/cli-meow-help",
