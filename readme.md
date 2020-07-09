@@ -189,7 +189,7 @@ After building hundreds of developer automation tools used by millions of develo
 → I'm sharing it all in this online video course. [Node CLI Automation
 without wasting a 1,000 hours][n] →</p>
 
-<a href="https://NodeCLI.com?utm_source=github&utm_medium=referral&utm_campaign=ahmadawais/awais" target="_blank"><img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/nodecli/featured.jpg" /></a>
+[![Node CLI Course](https://raw.githubusercontent.com/ahmadawais/stuff/master/nodecli/featured.jpg)][n]
 
 [![Node CLI](https://img.shields.io/badge/-NodeCLI.com%20%E2%86%92-gray.svg?colorB=488640&style=flat)][n]
 
