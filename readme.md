@@ -1,9 +1,11 @@
+[![cli-meow-help running in a terminal](./.github/cli-meow-help.png)](./../../)
+
 # cli-meow-help
 
 [![DOWNLOADS](https://img.shields.io/npm/dt/cli-meow-help?label=DOWNLOADS%20%20❯&colorA=6A788D&colorB=6A788D&style=flat)](https://www.npmjs.com/package/cli-meow-help) [![Node.js CLI](https://img.shields.io/badge/-NodeCLI.com-gray.svg?colorB=6A788D&style=flat)](https://NodeCLI.com/?utm_source=FOSS) [![Learn VSCode](https://img.shields.io/badge/-VSCODE.pro-gray.svg?colorB=6A788D&style=flat)](https://VSCode.pro/?utm_source=FOSS) [![Sponsor](https://img.shields.io/badge/-Sponsor-gray.svg?colorB=6A788D&style=flat)](https://github.com/ahmadawais/sponsor?utm_source=FOSS)
 [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=6A788D&colorB=6A788D&style=flat)](https://twitter.com/mrahmadawais/)
 
-> Generate automatically formatted help text for &#x27;meow&#x27; CLI helper
+> Generate automatically formatted help text for `meow` CLI helper
 
 <br>
 
@@ -49,6 +51,85 @@ meow(helpText, {flags});
 // Now run `cli-command --help` to view the
 // following auto formatted & generated help info.
 ```
+
+[![cli-meow-help running in a terminal](./.github/cli-meow-help.png)](./../../)
+
+<br />
+
+[![📃](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/options.png)](./../../)
+
+## API
+
+### meowHelp(options)
+
+#### ❯ options
+
+Type: `object`
+
+Default:
+
+```js
+{
+	name = `(CLI name undefined)`,
+	desc,
+	commands = {},
+	flags = {},
+	defaults = true,
+	header,
+	footer
+}
+```
+
+You can specify the options below.
+
+#### ❯ name
+
+Type: `string`<br>
+Default: `(CLI name undefined)`
+
+The `bin` command name of the cli that's used to run the CLI. Examples: `corona` for the [corona-cli](https://github.com/AhmadAwais/corona-cli) that's installed globally or `npx corona-cli` for if `npx` is the recommended usage.
+
+#### ❯ desc
+
+Type: `string`<br>
+Default: `undefined` (optional)
+
+Optionally define a description text for the help message.
+
+#### ❯ commands
+
+Type: `string`<br>
+Default: `{}` (optional)
+
+Optionally, define a JavaScript object containing info on the CLI commands (i.e. `meow` inputs). Each command has a `desc` property to define the help text.
+
+#### ❯ flags
+
+Type: `string`<br>
+Default: `{}`
+
+Define CLI options (i.e. `meow` flags) just like you do with `meow` which is the `flags` JavaScript object containing each flag with an extra `desc` property to define the help text.
+
+#### ❯ defaults
+
+Type: `string`<br>
+Default: `true` (optional)
+
+Prints out the default values of flags. Set to `false` to disable.
+
+#### ❯ header
+
+Type: `string`<br>
+Default: `undefined` (optional)
+
+Optionally, add additional header information.
+
+#### ❯ footer
+
+Type: `string`<br>
+Default: `undefined` (optional)
+
+Optionally, add additional footer information.
 
 <br>
 
