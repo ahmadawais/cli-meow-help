@@ -32,7 +32,35 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [1.0.1](https://github.com/ahmadawais/cli-meow-help/compare/1.0.0...1.0.1)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 Sponsor [`900c90f`](https://github.com/ahmadawais/cli-meow-help/commit/900c90f6665b1ee70b5eb9eb2b896d2982e95ff6) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: 1.0.0
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 First commit [`33bc4dc`](https://github.com/ahmadawais/cli-meow-help/commit/33bc4dc68500d7032156daea7feabbc1efa0beb9) <br>
+> 📦 First version [`ece26b7`](https://github.com/ahmadawais/cli-meow-help/commit/ece26b7d6043d1fa3992bc9cae19f17edef3345e) <br>
+> 📦 Spacing Docs [`292bb27`](https://github.com/ahmadawais/cli-meow-help/commit/292bb27bb15b277f010728c08bd21e24ab0d0322) <br>
+
+![👌 IMPROVE:](https://img.shields.io/badge/-IMPROVEMENT-gray.svg?colorB=39AA54)
+
+> 👌 Format [`3de92ac`](https://github.com/ahmadawais/cli-meow-help/commit/3de92acfc7bcc82c6595ca7eea3b21b84f9712e0) <br>
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`6d7fe94`](https://github.com/ahmadawais/cli-meow-help/commit/6d7fe94d8722f383deb587c80049bdd362009e59) <br>
+> 📖 API [`56f95ef`](https://github.com/ahmadawais/cli-meow-help/commit/56f95ef6237ae2fd869597dfb6fb361cb21c1203) <br>
+> 📖 Credit [`ca69f71`](https://github.com/ahmadawais/cli-meow-help/commit/ca69f71077348542dc4d0d0c7b99c292cb387eff) <br>
 
 <br>
 
