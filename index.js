@@ -7,12 +7,12 @@
  */
 
 const chalk = require('chalk');
+
 const createTable = require('./utils/createTable');
 const getDefaultValue = require('./utils/getDefaultValue');
 
 const dim = chalk.dim;
 const greenInverse = chalk.bold.inverse.green;
-const boldInverse = chalk.bold.inverse;
 const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
 

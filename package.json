@@ -27,6 +27,7 @@
 		"format": "prettier --write \"./**/*.{js,json}\""
 	},
 	"dependencies": {
-		"read-pkg-up": "^7.0.1"
+		"chalk": "^4.1.0",
+		"cli-table3": "^0.6.0"
 	}
 }
