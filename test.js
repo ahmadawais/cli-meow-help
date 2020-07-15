@@ -1,7 +1,7 @@
 const meowHelp = require('.');
 
 const commands = {
-	new: {desc: `Creates a new user account`},
+	new: {desc: `Create a new user account`},
 	duplicate: {desc: `Duplicates a user account`}
 };
 
