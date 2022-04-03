@@ -43,7 +43,8 @@ module.exports = ({
 	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
 
 	if (examples.length) {
-		help += `${spacer}${chalk`{gray EXAMPLES }`}`;
+		isPlural = examples.length > 1 ? `S` : ``;
+		help += `${spacer}${chalk`{gray EXAMPLE${isPlural} }`}`;
 		examples.map(ex => {
 			const exFlags = ex.flags ? `--${ex.flags.join(` --`)}` : ``;
 			help += chalk`\n{gray $} {green ${name}} {cyan ${ex.command}} {yellow ${exFlags}}`;
