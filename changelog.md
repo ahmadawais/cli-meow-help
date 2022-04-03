@@ -32,7 +32,23 @@ I have released a video course to help you build <a href="https://NodeCLI.com/?u
 
 <br>
 
+### RELEASE: [3.0.0](https://github.com/ahmadawais/cli-meow-help/compare/2.0.2...3.0.0)
+
+![📦 NEW:](https://img.shields.io/badge/-NEW-gray.svg?colorB=3778FF)
+
+> 📦 Examples [`b6c12ee`](https://github.com/ahmadawais/cli-meow-help/commit/b6c12ee444928cb3819c2e236d53e9c18bf76a21) <br>
+
+<br>
+
+[![hr](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/hr.png)](/)
+
+<br>
+
 ### RELEASE: [2.0.2](https://github.com/ahmadawais/cli-meow-help/compare/2.0.1...2.0.2)
+
+![📖 DOC:](https://img.shields.io/badge/-DOCS-gray.svg?colorB=978CD4)
+
+> 📖 Changelog [`9256c96`](https://github.com/ahmadawais/cli-meow-help/commit/9256c96384968d6f847904b74c198aa4059d56ad) <br>
 
 <br>
 
