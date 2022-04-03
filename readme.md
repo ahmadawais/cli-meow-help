@@ -74,6 +74,7 @@ Default: ↓
 	desc,
 	commands = {},
 	flags = {},
+	examples = [],
 	defaults = true,
 	header,
 	footer
@@ -109,6 +110,26 @@ Type: `string`<br>
 Default: `{}`
 
 Define CLI options (i.e. `meow` flags) just like you do with `meow` which is the `flags` JavaScript object containing each flag with an extra `desc` property to define the help text.
+
+##### > examples
+
+Type: `Array`<br>
+Default: `[]`
+
+List optional examples of how to use the CLI.
+
+> Check the [test](./test.js) file for more context. Format example:
+
+```js
+const examples = [
+
+	{
+		command: `new`,
+		flags: [`random`]
+	}
+];
+```
+
 
 #### ❯ defaults
 

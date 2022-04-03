@@ -7,16 +7,36 @@ const commands = {
 
 const flags = {
 	random: {
-		desc: `Prints random data`,
+		desc: `Prints some random data`,
+		type: 'boolean',
+		default: true
+	},
+	more: {
+		desc: `Prints more random data`,
 		type: 'boolean',
 		default: true
 	}
 };
 
+const examples = [
+	{
+		command: `new`
+	},
+	{
+		command: `new`,
+		flags: [`random`]
+	},
+	{
+		command: `new`,
+		flags: [`random`, `more`]
+	}
+];
+
 const helpText = meowHelp({
 	name: `cli-command`,
 	flags,
-	commands
+	commands,
+	examples
 });
 
 console.clear();

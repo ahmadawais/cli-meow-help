@@ -12,6 +12,7 @@ const createTable = require('./utils/createTable');
 const getDefaultValue = require('./utils/getDefaultValue');
 
 const dim = chalk.dim;
+const grayInverse = chalk.bold.inverse.gray;
 const greenInverse = chalk.bold.inverse.green;
 const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
@@ -21,6 +22,7 @@ module.exports = ({
 	desc,
 	commands = {},
 	flags = {},
+	examples = [],
 	defaults = true,
 	header,
 	footer
@@ -40,8 +42,16 @@ module.exports = ({
 	help += `${greenInverse(` USAGE `)} ${spacer}`;
 	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
 
+	if (examples.length) {
+		help += `${spacer}${chalk`{gray EXAMPLES }`}`;
+		examples.map(ex => {
+			const exFlags = ex.flags ? `--${ex.flags.join(` --`)}` : ``;
+			help += chalk`\n{gray $} {green ${name}} {cyan ${ex.command}} {yellow ${exFlags}}`;
+		});
+	}
+
 	// Commands.
-	help += `\n\n${cyanInverse(` COMMANDS `)} ${spacer}`;
+	help += `${spacer}${cyanInverse(` COMMANDS `)} ${spacer}`;
 	const tableCommands = createTable();
 	const commandKeys = Object.keys(commands);
 
@@ -57,7 +67,7 @@ module.exports = ({
 	help += tableCommands.toString();
 
 	// Flags.
-	help += `\n\n${yellowInverse(` OPTIONS `)} ${spacer}`;
+	help += `${spacer}${yellowInverse(` OPTIONS `)} ${spacer}`;
 	const tableFlags = createTable();
 	const flagKeys = Object.keys(flags);
 
