@@ -12,7 +12,6 @@ const createTable = require('./utils/createTable');
 const getDefaultValue = require('./utils/getDefaultValue');
 
 const dim = chalk.dim;
-const grayInverse = chalk.bold.inverse.gray;
 const greenInverse = chalk.bold.inverse.green;
 const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
