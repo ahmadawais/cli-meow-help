@@ -23,7 +23,7 @@ module.exports = ({
 	commands = {},
 	flags = {},
 	examples = [],
-	defaults = true,
+	defaults = false,
 	header,
 	footer
 }) => {
@@ -61,11 +61,11 @@ module.exports = ({
 
 		for (const command of commandKeys) {
 			let options = commands[command];
-			const defaultValue = getDefaultValue(defaults, options);
+			const defaultValue = defaults ? getDefaultValue(defaults, options) : '';
 
 			tableCommands.push([
 				chalk`{cyan ${command}}`,
-				`${options.desc}  ${dim(defaultValue)}`
+				`${options.desc}  ${dim(defaultValue)}`.trim();
 			]);
 		}
 		help += tableCommands.toString();
@@ -80,11 +80,11 @@ module.exports = ({
 		for (const flag of flagKeys) {
 			let options = flags[flag];
 			let alias = options.alias ? `-${options.alias}, ` : ``;
-			const defaultValue = getDefaultValue(defaults, options);
+			const defaultValue = defaults ? getDefaultValue(defaults, options) : '';
 
 			tableFlags.push([
 				chalk`{yellow ${alias}--${flag}}`,
-				`${options.desc} ${dim(defaultValue)}`
+				`${options.desc} ${dim(defaultValue)}`.trim();
 			]);
 		}
 
