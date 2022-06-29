@@ -52,38 +52,43 @@ module.exports = ({
 	}
 
 	// Commands.
-	help += `${spacer}${cyanInverse(` COMMANDS `)} ${spacer}`;
-	const tableCommands = createTable();
 	const commandKeys = Object.keys(commands);
+	if (commandKeys.length) {
+		help += `${spacer}${cyanInverse(` COMMANDS `)} ${spacer}`;
+		const tableCommands = createTable();
 
-	for (const command of commandKeys) {
-		let options = commands[command];
-		const defaultValue = getDefaultValue(defaults, options);
+		for (const command of commandKeys) {
+			let options = commands[command];
+			const defaultValue = getDefaultValue(defaults, options);
 
-		tableCommands.push([
-			chalk`{cyan ${command}}`,
-			`${options.desc}  ${dim(defaultValue)}`
-		]);
+			tableCommands.push([
+				chalk`{cyan ${command}}`,
+				`${options.desc}  ${dim(defaultValue)}`
+			]);
+		}
+		help += tableCommands.toString();
 	}
-	help += tableCommands.toString();
 
 	// Flags.
-	help += `${spacer}${yellowInverse(` OPTIONS `)} ${spacer}`;
-	const tableFlags = createTable();
 	const flagKeys = Object.keys(flags);
+	if (flagKeys.length) {
+		help += `${spacer}${yellowInverse(` OPTIONS `)} ${spacer}`;
+		const tableFlags = createTable();
 
-	for (const flag of flagKeys) {
-		let options = flags[flag];
-		let alias = options.alias ? `-${options.alias}, ` : ``;
-		const defaultValue = getDefaultValue(defaults, options);
+		for (const flag of flagKeys) {
+			let options = flags[flag];
+			let alias = options.alias ? `-${options.alias}, ` : ``;
+			const defaultValue = getDefaultValue(defaults, options);
 
-		tableFlags.push([
-			chalk`{yellow ${alias}--${flag}}`,
-			`${options.desc} ${dim(defaultValue)}`
-		]);
+			tableFlags.push([
+				chalk`{yellow ${alias}--${flag}}`,
+				`${options.desc} ${dim(defaultValue)}`
+			]);
+		}
+
+		help += tableFlags.toString();
 	}
 
-	help += tableFlags.toString();
 	help += `\n`;
 
 	if (footer) {
