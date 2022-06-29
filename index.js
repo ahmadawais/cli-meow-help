@@ -18,7 +18,7 @@ const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
 
 module.exports = ({
-	name = `(CLI name undefined)`,
+	name,
 	desc,
 	commands = {},
 	flags = {},
@@ -39,8 +39,10 @@ module.exports = ({
 	}
 
 	// Usage.
-	help += `${greenInverse(` USAGE `)} ${spacer}`;
-	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
+	if (name) {
+		help += `${greenInverse(` USAGE `)} ${spacer}`;
+		help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
+	}
 
 	if (examples.length) {
 		isPlural = examples.length > 1 ? `S` : ``;
