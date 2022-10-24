@@ -38,53 +38,62 @@ module.exports = ({
 		help += `${desc}${spacer}`;
 	}
 
+	const commandCount = Object.keys(commands).length;
+	const flagCount = Object.keys(flags).length;
+
 	// Usage.
 	help += `${greenInverse(` USAGE `)} ${spacer}`;
-	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
+	// prettier-ignore
+	help += chalk`{gray $} {green ${name}} {cyan ${commandCount > 0 && '<command>'}}{yellow ${flagCount > 0 && ' [option]'}}`;
 
 	if (examples.length) {
 		isPlural = examples.length > 1 ? `S` : ``;
 		help += `${spacer}${chalk`{gray EXAMPLE${isPlural} }`}`;
 		examples.map(ex => {
-			const exFlags = ex.flags ? `--${ex.flags.join(` --`)}` : ``;
-			help += chalk`\n{gray $} {green ${name}} {cyan ${ex.command}} {yellow ${exFlags}}`;
+			const exCommand = ex.command ? ` ${ex.command}` : ``;
+			const exFlags = ex.flags ? ` --${ex.flags.join(` --`)}` : ``;
+			help += chalk`\n{gray $} {green ${name}}{cyan ${exCommand}}{yellow ${exFlags}}`;
 		});
 	}
 
 	// Commands.
-	help += `${spacer}${cyanInverse(` COMMANDS `)} ${spacer}`;
-	const tableCommands = createTable();
-	const commandKeys = Object.keys(commands);
+	if (commandCount > 0) {
+		help += `${spacer}${cyanInverse(` COMMANDS `)} ${spacer}`;
+		const tableCommands = createTable();
+		const commandKeys = Object.keys(commands);
 
-	for (const command of commandKeys) {
-		let options = commands[command];
-		const defaultValue = getDefaultValue(defaults, options);
+		for (const command of commandKeys) {
+			let options = commands[command];
+			const defaultValue = getDefaultValue(defaults, options);
 
-		tableCommands.push([
-			chalk`{cyan ${command}}`,
-			`${options.desc}  ${dim(defaultValue)}`
-		]);
+			tableCommands.push([
+				chalk`{cyan ${command}}`,
+				`${options.desc}  ${dim(defaultValue)}`
+			]);
+		}
+		help += tableCommands.toString();
 	}
-	help += tableCommands.toString();
 
 	// Flags.
-	help += `${spacer}${yellowInverse(` OPTIONS `)} ${spacer}`;
-	const tableFlags = createTable();
-	const flagKeys = Object.keys(flags);
+	if (flagCount > 0) {
+		help += `${spacer}${yellowInverse(` OPTIONS `)} ${spacer}`;
+		const tableFlags = createTable();
+		const flagKeys = Object.keys(flags);
 
-	for (const flag of flagKeys) {
-		let options = flags[flag];
-		let alias = options.alias ? `-${options.alias}, ` : ``;
-		const defaultValue = getDefaultValue(defaults, options);
+		for (const flag of flagKeys) {
+			let options = flags[flag];
+			let alias = options.alias ? `-${options.alias}, ` : ``;
+			const defaultValue = getDefaultValue(defaults, options);
 
-		tableFlags.push([
-			chalk`{yellow ${alias}--${flag}}`,
-			`${options.desc} ${dim(defaultValue)}`
-		]);
+			tableFlags.push([
+				chalk`{yellow ${alias}--${flag}}`,
+				`${options.desc} ${dim(defaultValue)}`
+			]);
+		}
+
+		help += tableFlags.toString();
+		help += `\n`;
 	}
-
-	help += tableFlags.toString();
-	help += `\n`;
 
 	if (footer) {
 		help += `\n${footer}\n`;
