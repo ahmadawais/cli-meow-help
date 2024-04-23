@@ -76,10 +76,13 @@ module.exports = ({
 		let options = flags[flag];
 		let alias = options.alias ? `-${options.alias}, ` : ``;
 		const defaultValue = getDefaultValue(defaults, options);
+		const choices = options.choices
+			? `\n${chalk.yellow('Valid Values:')} ${options.choices.join(`, `)}`
+			: ``;
 
 		tableFlags.push([
 			chalk`{yellow ${alias}--${flag}}`,
-			`${options.desc} ${dim(defaultValue)}`
+			`${options.desc} ${dim(defaultValue)} ${dim(choices)}`
 		]);
 	}
 
