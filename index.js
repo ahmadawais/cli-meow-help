@@ -3,16 +3,16 @@
  *
  * Generate automatically formatted help text for `meow` CLI helper
  *
- * @author Awais <https://twitter.com/MrAhmadAwais/>
+ * @autor Awais <https://twitter.com/MrAhmadAwais/>
  */
 
 import chalk from 'chalk';
+import chalkTemplate from 'chalk-template';
 
 import createTable from './utils/createTable.js';
 import getDefaultValue from './utils/getDefaultValue.js';
 
 const dim = chalk.dim;
-const grayInverse = chalk.bold.inverse.gray;
 const greenInverse = chalk.bold.inverse.green;
 const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
@@ -40,15 +40,15 @@ export default ({
 
 	// Usage.
 	help += `${greenInverse(` USAGE `)} ${spacer}`;
-	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
+	help += chalkTemplate`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
 	let isPlural;
 
 	if (examples.length) {
 		isPlural = examples.length > 1 ? `S` : ``;
-		help += `${spacer}${chalk`{gray EXAMPLE${isPlural} }`}`;
+		help += `${spacer}${chalkTemplate`{gray EXAMPLE${isPlural} }`}`;
 		examples.map(ex => {
 			const exFlags = ex.flags ? `--${ex.flags.join(` --`)}` : ``;
-			help += chalk`\n{gray $} {green ${name}} {cyan ${ex.command}} {yellow ${exFlags}}`;
+			help += chalkTemplate`\n{gray $} {green ${name}} {cyan ${ex.command}} {yellow ${exFlags}}`;
 		});
 	}
 
@@ -62,7 +62,7 @@ export default ({
 		const defaultValue = getDefaultValue(defaults, options);
 
 		tableCommands.push([
-			chalk`{cyan ${command}}`,
+			chalkTemplate`{cyan ${command}}`,
 			`${options.desc}  ${dim(defaultValue)}`
 		]);
 	}
@@ -80,7 +80,7 @@ export default ({
 		const defaultValue = getDefaultValue(defaults, options);
 
 		tableFlags.push([
-			chalk`{yellow ${alias}${shortFlag}--${flag}}`,
+			chalkTemplate`{yellow ${alias}${shortFlag}--${flag}}`,
 			`${options.desc} ${dim(defaultValue)}`
 		]);
 	}
