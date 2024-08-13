@@ -45,11 +45,28 @@ All notable changes in this project's [released versions](../../releases) are do
 <img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/changelog/light-hr.png#gh-light-mode-only" alt="hr" />
 <br>
 
+### RELEASE: [4.0.0](https://github.com/ahmadawais/cli-meow-help/compare/3.2.0...4.0.0)
+
+![👌 IMPROVE:](https://img.shields.io/badge/👌-IMPROVEMENT-gray.svg?colorA=8250DF&colorB=8250DF&style=for-the-badge)
+
+> 👌 Latest chalk and chalkTemplate [`41e2587`](https://github.com/ahmadawais/cli-meow-help/commit/41e25875417cfd74abe7ef21129884cafb1fb930)
+
+<br>
+
+<br>
+<img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/changelog/dark-hr.png#gh-dark-mode-only" alt="hr" />
+<img src="https://raw.githubusercontent.com/ahmadawais/stuff/master/changelog/light-hr.png#gh-light-mode-only" alt="hr" />
+<br>
+
 ### RELEASE: [3.2.0](https://github.com/ahmadawais/cli-meow-help/compare/3.1.0...3.2.0)
 
 ![📦 NEW:](https://img.shields.io/badge/📦-NEW-gray.svg?colorA=238635&colorB=238635&style=for-the-badge)
 
 > 📦 shortFlag support [`5bbf37e`](https://github.com/ahmadawais/cli-meow-help/commit/5bbf37e2863b1c549845b165aed17ebc3b7e3ffc)
+
+![📖 DOC:](https://img.shields.io/badge/📖-DOCS-gray.svg?colorA=1169DA&colorB=1169DA&style=for-the-badge)
+
+> 📖 Changelog [`ee4b112`](https://github.com/ahmadawais/cli-meow-help/commit/ee4b112928add40af1821ee78c9e058a89d8aff1)
 
 <br>
 
