@@ -1,33 +1,54 @@
 {
-	"name": "cli-meow-help",
-	"version": "3.2.0",
-	"description": "Generate automatically formatted help text for `meow` CLI helper",
-	"license": "MIT",
-	"repository": "ahmadawais/cli-meow-help",
-	"author": {
-		"name": "Ahmad Awais",
-		"email": "me@AhmadAwais.com",
-		"url": "https://twitter.com/MrAhmadAwais"
-	},
-	"main": "index.js",
-	"files": [
-		"utils",
-		"index.js"
-	],
-	"keywords": [
-		"cli-meow-help",
-		"Ahmad Awais",
-		"ahmadawais"
-	],
-	"devDependencies": {
-		"prettier": "^2.0.2"
-	},
-	"scripts": {
-		"test": "node test.js",
-		"format": "prettier --write \"./**/*.{js,json}\""
-	},
-	"dependencies": {
-		"chalk": "^4.1.0",
-		"cli-table3": "^0.6.0"
-	}
+  "name": "cli-meow-help",
+  "version": "3.2.0",
+  "description": "Generate automatically formatted help text for `meow` CLI helper",
+  "license": "MIT",
+  "repository": "ahmadawais/cli-meow-help",
+  "author": {
+    "name": "Ahmad Awais",
+    "email": "me@AhmadAwais.com",
+    "url": "https://twitter.com/MrAhmadAwais"
+  },
+  "main": "dist/index.cjs",
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "keywords": [
+    "cli-meow-help",
+    "Ahmad Awais",
+    "ahmadawais"
+  ],
+  "devDependencies": {
+    "prettier": "^2.0.2",
+    "@types/node": "^22.2.0",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "dev": "npm run build -- --watch",
+    "build": "tsup index.js --format cjs,esm --dts --sourcemap --clean --minify --shims",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cli-table3": "^0.6.0"
+  },
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  }
 }

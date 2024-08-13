@@ -1,7 +1,7 @@
 'use strict';
 
-const path = require('path');
-const readPkgUp = require('read-pkg-up');
+import path from "path";
+import readPkgUp from "read-pkg-up";
 
 function returnPackageUp(parentModule = module.parent) {
 	// Prevent caching of this module so module.parent is always accurate
@@ -16,4 +16,4 @@ function returnPackageUp(parentModule = module.parent) {
 	}
 }
 
-module.exports = returnPackageUp;
+export default returnPackageUp;

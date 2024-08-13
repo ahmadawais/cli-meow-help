@@ -1,9 +1,9 @@
-const chalk = require('chalk');
+import chalk from "chalk";
 
 let defaultValue = ``;
 const defaultText = `Default:`;
 
-module.exports = (defaults, options) => {
+export default (defaults, options) => {
 	if (defaults && options.default) {
 		defaultValue = `${defaultText} ${chalk.yellow(`${options.default}`)}`;
 	} else if (defaults && options.type === `boolean`) {

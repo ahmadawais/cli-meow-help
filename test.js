@@ -1,4 +1,4 @@
-const meowHelp = require('.');
+import meowHelp from './index.js';
 
 const commands = {
 	new: {desc: `Create a new user account`},
@@ -9,7 +9,7 @@ const flags = {
 	random: {
 		desc: `Prints some random data`,
 		type: 'boolean',
-		alias: `r`, // Old versions of meow
+		alias: `r`, // Old versions of meow used `shortFlag` instead of `alias`.
 		default: true
 	},
 	more: {
@@ -41,5 +41,4 @@ const helpText = meowHelp({
 	examples
 });
 
-console.clear();
 console.log(helpText);

@@ -6,10 +6,10 @@
  * @author Awais <https://twitter.com/MrAhmadAwais/>
  */
 
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const createTable = require('./utils/createTable');
-const getDefaultValue = require('./utils/getDefaultValue');
+import createTable from './utils/createTable.js';
+import getDefaultValue from './utils/getDefaultValue.js';
 
 const dim = chalk.dim;
 const grayInverse = chalk.bold.inverse.gray;
@@ -17,7 +17,7 @@ const greenInverse = chalk.bold.inverse.green;
 const cyanInverse = chalk.bold.inverse.cyan;
 const yellowInverse = chalk.bold.inverse.yellow;
 
-module.exports = ({
+export default ({
 	name = `(CLI name undefined)`,
 	desc,
 	commands = {},
@@ -41,6 +41,7 @@ module.exports = ({
 	// Usage.
 	help += `${greenInverse(` USAGE `)} ${spacer}`;
 	help += chalk`{gray $} {green ${name}} {cyan <command>} {yellow [option]}`;
+	let isPlural;
 
 	if (examples.length) {
 		isPlural = examples.length > 1 ? `S` : ``;
