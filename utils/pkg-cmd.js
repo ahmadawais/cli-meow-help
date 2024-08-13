@@ -1,6 +1,6 @@
 'use strict';
 
-const returnPackageUp = require('./pkg-up');
+import returnPackageUp from './pkg-up.js';
 
 function returnPackageCommand(pkg = returnPackageUp()) {
 	if (typeof pkg.bin !== 'undefined') {
@@ -10,4 +10,4 @@ function returnPackageCommand(pkg = returnPackageUp()) {
 	}
 }
 
-module.exports = returnPackageCommand;
+export default returnPackageCommand;

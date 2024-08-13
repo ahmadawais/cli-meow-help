@@ -1,6 +1,6 @@
-const Table = require('cli-table3');
+import Table from "cli-table3";
 
-module.exports = () => {
+export default () => {
 	return new Table({
 		chars: {
 			top: '',
