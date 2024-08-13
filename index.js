@@ -75,10 +75,11 @@ module.exports = ({
 	for (const flag of flagKeys) {
 		let options = flags[flag];
 		let alias = options.alias ? `-${options.alias}, ` : ``;
+		let shortFlag = options.shortFlag ? `-${options.shortFlag}, ` : ``;
 		const defaultValue = getDefaultValue(defaults, options);
 
 		tableFlags.push([
-			chalk`{yellow ${alias}--${flag}}`,
+			chalk`{yellow ${alias}${shortFlag}--${flag}}`,
 			`${options.desc} ${dim(defaultValue)}`
 		]);
 	}

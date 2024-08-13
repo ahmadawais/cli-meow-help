@@ -9,11 +9,13 @@ const flags = {
 	random: {
 		desc: `Prints some random data`,
 		type: 'boolean',
+		alias: `r`, // Old versions of meow
 		default: true
 	},
 	more: {
 		desc: `Prints more random data`,
 		type: 'boolean',
+		shortFlag: `m`, // Latest addition of meow.
 		default: true
 	}
 };
