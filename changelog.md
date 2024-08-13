@@ -47,6 +47,11 @@ All notable changes in this project's [released versions](../../releases) are do
 
 ### RELEASE: [4.0.0](https://github.com/ahmadawais/cli-meow-help/compare/3.2.0...4.0.0)
 
+
+![BREAKING](https://img.shields.io/badge/‼️-BREAKING%20CHANGES-gray.svg?colorA=CF222F&colorB=CF222F&style=for-the-badge)
+
+> ‼️ Require no longer supported moving to ESM based syntax 
+
 ![👌 IMPROVE:](https://img.shields.io/badge/👌-IMPROVEMENT-gray.svg?colorA=8250DF&colorB=8250DF&style=for-the-badge)
 
 > 👌 Latest chalk and chalkTemplate [`41e2587`](https://github.com/ahmadawais/cli-meow-help/commit/41e25875417cfd74abe7ef21129884cafb1fb930)
